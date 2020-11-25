@@ -3,11 +3,17 @@ const app = new Vue({
     
     data:{
         movies:[],
+        series:[],
         searchBar:''
     },
 
     methods:{
         search(){
+            this.getMovies();
+            this.getSeries();
+        },
+
+        getMovies(){
             axios.get('https://api.themoviedb.org/3/search/movie?',{
                 params:{
                     api_key: 'cbadb2020a9a1deec5f8094ca2623fe0',
@@ -19,6 +25,25 @@ const app = new Vue({
                 // handle success
                 console.log(result);
                 this.movies = result.data.results
+            })
+            .catch(error => {
+                // handle error
+                console.log(error);
+            })
+        },
+
+        getSeries(){
+            axios.get('https://api.themoviedb.org/3/search/tv?',{
+                params:{
+                    api_key: 'cbadb2020a9a1deec5f8094ca2623fe0',
+                    query: this.searchBar,
+                    language: 'it-IT'
+                }
+            })
+            .then(result => {
+                // handle success
+                console.log(result);
+                this.series = result.data.results
             })
             .catch(error => {
                 // handle error

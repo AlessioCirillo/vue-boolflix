@@ -22,6 +22,7 @@
         >
         <button @click="search">cerca</button>
 
+        <!-- MOVIES -->
         <ul>
             <li v-for="movie in movies">
                 <div>Titolo: {{movie.title}}</div>
@@ -38,6 +39,28 @@
                     <span>
                         <i v-for="n in getStar(movie.vote_average)" class="fas fa-star"></i>
                         <i v-for="n in 5 - getStar(movie.vote_average)" class="far fa-star"></i>
+                    </span>
+                </div>
+            </li>
+        </ul>
+
+        <!-- SEREIS -->
+        <ul>
+            <li v-for="serie in series">
+                <div>Titolo: {{serie.name}}</div>
+                <div>Titolo originale: {{serie.original_name}}</div>
+                <div>Lingua originale: 
+                    <span v-if="serie.original_language === 'it' || serie.original_language === 'en'">
+                        <img :src="flag(serie.original_language)" alt="">
+                    </span>
+                    <span v-else>
+                        {{serie.original_language}}
+                    </span>
+                </div>
+                <div>Voto: 
+                    <span>
+                        <i v-for="n in getStar(serie.vote_average)" class="fas fa-star"></i>
+                        <i v-for="n in 5 - getStar(serie.vote_average)" class="far fa-star"></i>
                     </span>
                 </div>
             </li>
