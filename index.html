@@ -26,7 +26,14 @@
             <li v-for="movie in movies">
                 <div>Titolo: {{movie.title}}</div>
                 <div>Titolo originale: {{movie.original_title}}</div>
-                <div>Lingua originale: {{movie.original_language}}</div>
+                <div>Lingua originale: 
+                    <span v-if="movie.original_language === 'it' || movie.original_language === 'en'">
+                        <img :src="flag(movie.original_language)" alt="">
+                    </span>
+                    <span v-else>
+                        {{movie.original_language}}
+                    </span>
+                </div>
                 <div>Voto: 
                     <span>
                         <i v-for="n in getStar(movie.vote_average)" class="fas fa-star"></i>

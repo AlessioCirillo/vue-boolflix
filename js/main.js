@@ -28,6 +28,10 @@ const app = new Vue({
 
         getStar(vote){
              return Math.ceil(vote / 2);
+        },
+
+        flag(language){
+            return (language === 'it' || language === 'en') ? `./img/${language}.png` : '';
         }
         
     }

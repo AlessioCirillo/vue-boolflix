@@ -12,3 +12,9 @@ body{
 ul li{
     padding: 10px;
 }
+
+img{
+    width: 30px;
+    position: relative;
+    top: 3px;
+}
