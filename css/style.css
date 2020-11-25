@@ -8,3 +8,7 @@ body{
     font-family: sans-serif;
     padding: 50px;
 }
+
+ul li{
+    padding: 10px;
+}
