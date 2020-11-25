@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <!-- FONTAWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
     <!-- VUE -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
     
@@ -16,6 +18,7 @@
     <div id="app">
         <input type="text"
             v-model="searchBar"
+            @keyup.enter="search"
         >
         <button @click="search">cerca</button>
 
@@ -24,7 +27,12 @@
                 <div>Titolo: {{movie.title}}</div>
                 <div>Titolo originale: {{movie.original_title}}</div>
                 <div>Lingua originale: {{movie.original_language}}</div>
-                <div>Voto: {{movie.vote_average}}</div>
+                <div>Voto: 
+                    <span>
+                        <i v-for="n in getStar(movie.vote_average)" class="fas fa-star"></i>
+                        <i v-for="n in 5 - getStar(movie.vote_average)" class="far fa-star"></i>
+                    </span>
+                </div>
             </li>
         </ul>
     </div>

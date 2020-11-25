@@ -12,7 +12,7 @@ const app = new Vue({
                 params:{
                     api_key: 'cbadb2020a9a1deec5f8094ca2623fe0',
                     query: this.searchBar,
-                    language: 'it_IT'
+                    language: 'it-IT'
                 }
             })
             .then(result => {
@@ -24,6 +24,11 @@ const app = new Vue({
                 // handle error
                 console.log(error);
             })
+        },
+
+        getStar(vote){
+             return Math.ceil(vote / 2);
         }
+        
     }
 });
