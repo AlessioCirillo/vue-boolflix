@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- VUE -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="app">
+        <input type="text"
+            v-model="searchBar"
+        >
+        <button @click="search">cerca</button>
+
+        <ul>
+            <li v-for="movie in movies">
+                <div>Titolo: {{movie.title}}</div>
+                <div>Titolo originale: {{movie.original_title}}</div>
+                <div>Lingua originale: {{movie.original_language}}</div>
+                <div>Voto: {{movie.vote_average}}</div>
+            </li>
+        </ul>
+    </div>
+
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>
