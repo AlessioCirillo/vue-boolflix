@@ -56,7 +56,11 @@ const app = new Vue({
         },
 
         flag(language){
-            return (language === 'it' || language === 'en') ? `./img/${language}.png` : '';
+            return `./img/${language}.png`
+        },
+
+        poster(link){
+            return `https://image.tmdb.org/t/p/w342${link}`
         }
         
     }
