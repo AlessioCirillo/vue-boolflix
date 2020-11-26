@@ -60,7 +60,7 @@ const app = new Vue({
         },
 
         poster(link){
-            return `https://image.tmdb.org/t/p/w342${link}`
+            return `https://image.tmdb.org/t/p/w185${link}`
         }
         
     }

@@ -40,14 +40,45 @@ main{
 ul{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    color: #7f7f7f;
 }
 
 ul li{
-    padding: 10px;
+    flex-basis: 205px;
+    padding: 20px;
+    margin: 20px 15px;
+    list-style: none;
+    background: #2B3A47;
+    text-align: center;
+}
+
+.poster {
+    padding: 20px;
+}
+
+.poster img{
+    width: 185px;
+    height: 278px;
+}
+
+.poster .no-img{
+    width: 185px;
+}
+
+li div{
+    padding: 10px 0;
+}
+
+li .title{
+    text-transform: uppercase;
+    color: #fff;
+}
+
+li .fa-star{
+    color: #000;
 }
 
 .flag{
-    width: 30px;
-    position: relative;
-    top: 3px;
+    width: 40px;
 }
