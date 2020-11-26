@@ -6,7 +6,40 @@
 
 body{
     font-family: sans-serif;
-    padding: 50px;
+    background: #1A2D3C;
+}
+
+/* HEADER */
+header{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px;
+    background:#2B3A47;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+/* LOGO */
+.logo img{
+    width: 85px;
+}
+
+/* SEARCH-BAR */
+input{
+    width: 300px;
+    padding: 0 10px;
+    border-radius: 5px;
+}
+
+/* MAIN */
+main{
+    padding: 72px 20px 0 20px;
+}
+
+ul{
+    display: flex;
+    flex-wrap: wrap;
 }
 
 ul li{

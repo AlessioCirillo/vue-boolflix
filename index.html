@@ -16,89 +16,96 @@
 <body>
     
     <div id="app">
-        <input type="text"
-            v-model="searchBar"
-            @keyup.enter="search"
-        >
-        <button @click="search">cerca</button>
+    
+        <header>
+            <div class="logo">
+                <img src="./img/logo.png" alt="">
+            </div>
+            <input type="text"
+                v-model="searchBar"
+                @keyup.enter="search"
+            >
+        </header>
 
-        <!-- MOVIES -->
-        <ul>
-            <li v-for="movie in movies">
-                <!-- TITOLO -->
-                <div>Titolo: {{movie.title}}</div>
-                <div>Titolo originale: {{movie.original_title}}</div>
-                
-                <!-- LINGUA -->
-                <div>Lingua originale: 
-                    <span v-if="movie.original_language === 'it' || movie.original_language === 'en'">
-                        <img :src="flag(movie.original_language)" class="flag" alt="">
-                    </span>
-                    <span v-else>
-                        {{movie.original_language}}
-                    </span>
-                </div>
-                
-                <!-- VOTO -->
-                <div>Voto: 
-                    <span>
-                        <i v-for="n in getStar(movie.vote_average)" class="fas fa-star"></i>
-                        <i v-for="n in 5 - getStar(movie.vote_average)" class="far fa-star"></i>
-                    </span>
-                </div>
-                
-                <!-- POSTER -->
-                <div>
-                    <img v-if="movie.poster_path !== null" 
-                        :src="poster(movie.poster_path)" 
-                        alt=""
-                    >
-                    <img v-else 
-                        src="https://www.altavod.com/assets/images/poster-placeholder.png" 
-                        alt=""
-                    >
-                </div>
-            </li>
-        </ul>
-
-        <!-- SEREIS -->
-        <ul>
-            <li v-for="serie in series">
-                <!-- TITOLO -->
-                <div>Titolo: {{serie.name}}</div>
-                <div>Titolo originale: {{serie.original_name}}</div>
-                
-                <!-- LINGUA -->
-                <div>Lingua originale: 
-                    <span v-if="serie.original_language === 'it' || serie.original_language === 'en'">
-                        <img :src="flag(serie.original_language)" class="flag" alt="">
-                    </span>
-                    <span v-else>
-                        {{serie.original_language}}
-                    </span>
-                </div>
-                
-                <!-- VOTO -->
-                <div>Voto: 
-                    <span>
-                        <i v-for="n in getStar(serie.vote_average)" class="fas fa-star"></i>
-                        <i v-for="n in 5 - getStar(serie.vote_average)" class="far fa-star"></i>
-                    </span>
-                </div>
-                
-                <!-- POSTER -->
-                <div>
-                    <img v-if="serie.poster_path !== null" 
-                        :src="poster(serie.poster_path)" 
-                        alt=""
-                    >
-                    <img v-else 
-                        src="https://www.altavod.com/assets/images/poster-placeholder.png" 
-                        alt=""
-                    >
-                </div>
-            </li>
-        </ul>
+        <main>
+            <!-- MOVIES -->
+            <ul>
+                <li v-for="movie in movies">
+                    <!-- TITOLO -->
+                    <div class="title">Titolo: {{movie.title}}</div>
+                    <div class="orig-title">Titolo originale: {{movie.original_title}}</div>
+                    
+                    <!-- LINGUA -->
+                    <div class="language">Lingua originale: 
+                        <span v-if="movie.original_language === 'it' || movie.original_language === 'en'">
+                            <img :src="flag(movie.original_language)" class="flag" alt="">
+                        </span>
+                        <span v-else>
+                            {{movie.original_language}}
+                        </span>
+                    </div>
+                    
+                    <!-- VOTO -->
+                    <div class="voto">Voto: 
+                        <span>
+                            <i v-for="n in getStar(movie.vote_average)" class="fas fa-star"></i>
+                            <i v-for="n in 5 - getStar(movie.vote_average)" class="far fa-star"></i>
+                        </span>
+                    </div>
+                    
+                    <!-- POSTER -->
+                    <div class="poster">
+                        <img v-if="movie.poster_path !== null" 
+                            :src="poster(movie.poster_path)" 
+                            alt=""
+                        >
+                        <img v-else 
+                            src="https://www.altavod.com/assets/images/wposter-placeholder.png" 
+                            alt=""
+                        >
+                    </div>
+                </li>
+            </ul>
+    
+            <!-- SEREIS -->
+            <ul>
+                <li v-for="serie in series">
+                    <!-- TITOLO -->
+                    <div class="title">Titolo: {{serie.name}}</div>
+                    <div class="orig-title">Titolo originale: {{serie.original_name}}</div>
+                    
+                    <!-- LINGUA -->
+                    <div class="language">Lingua originale: 
+                        <span v-if="serie.original_language === 'it' || serie.original_language === 'en'">
+                            <img :src="flag(serie.original_language)" class="flag" alt="">
+                        </span>
+                        <span v-else>
+                            {{serie.original_language}}
+                        </span>
+                    </div>
+                    
+                    <!-- VOTO -->
+                    <div class="voto">Voto: 
+                        <span>
+                            <i v-for="n in getStar(serie.vote_average)" class="fas fa-star"></i>
+                            <i v-for="n in 5 - getStar(serie.vote_average)" class="far fa-star"></i>
+                        </span>
+                    </div>
+                    
+                    <!-- POSTER -->
+                    <div class="poster">
+                        <img v-if="serie.poster_path !== null" 
+                            :src="poster(serie.poster_path)" 
+                            alt=""
+                        >
+                        <img v-else 
+                            src="https://www.altavod.com/assets/images/poster-placeholder.png" 
+                            alt=""
+                        >
+                    </div>
+                </li>
+            </ul>
+        </main>
     </div>
 
     <!-- JS -->
