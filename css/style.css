@@ -35,7 +35,7 @@ input{
 
 /* MAIN */
 main{
-    padding: 72px 20px 0 20px;
+    padding: 100px 20px 0 20px;
 }
 
 ul{
@@ -53,9 +53,12 @@ ul li{
     list-style: none;
     background: #2B3A47;
     text-align: center;
+    transition: .4s;
 }
 
 .story{
+    display: flex;
+    align-items: center;
     position: absolute;
     top: 0;
     left: 0;
@@ -65,15 +68,22 @@ ul li{
     cursor: pointer; 
     text-align: left;
     overflow-y: auto;
+    transition: .4s;
 }
 
 .story p{
     padding: 20px;
+    font-size: 13px;
+}
+
+ul li:hover{
+    transform: scale(1.1);
 }
 
 .story:hover{
     background: rgba( 0, 0, 0, 0.8);
     opacity: 1;
+    border-radius: 5px;
     color: #fff;
 }
 
