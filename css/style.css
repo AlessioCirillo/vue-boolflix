@@ -19,6 +19,7 @@ header{
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 1;
 }
 /* LOGO */
 .logo img{
@@ -45,12 +46,35 @@ ul{
 }
 
 ul li{
-    flex-basis: 205px;
+    position: relative;
+    flex-basis: 265px;
     padding: 20px;
     margin: 20px 15px;
     list-style: none;
     background: #2B3A47;
     text-align: center;
+}
+
+.story{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    cursor: pointer; 
+    text-align: left;
+    overflow-y: auto;
+}
+
+.story p{
+    padding: 20px;
+}
+
+.story:hover{
+    background: rgba( 0, 0, 0, 0.8);
+    opacity: 1;
+    color: #fff;
 }
 
 .poster {
@@ -63,7 +87,9 @@ ul li{
 }
 
 .poster .no-img{
-    width: 185px;
+    background-image: url(../img/image-not-found.png);
+    background-position: center;
+    background-size: cover;
 }
 
 li div{

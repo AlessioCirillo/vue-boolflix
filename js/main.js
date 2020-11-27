@@ -4,7 +4,8 @@ const app = new Vue({
     data:{
         movies:[],
         series:[],
-        searchBar:''
+        searchBar:'',
+        
     },
 
     methods:{
@@ -62,6 +63,5 @@ const app = new Vue({
         poster(link){
             return `https://image.tmdb.org/t/p/w185${link}`
         }
-        
     }
 });

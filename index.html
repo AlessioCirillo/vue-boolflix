@@ -30,8 +30,7 @@
         <main>
             <!-- MOVIES -->
             <ul>
-                <li v-for="movie in movies">
-                    
+                <li v-for="movie in movies">         
                     <!-- POSTER -->
                     <div class="poster">
                         <img v-if="movie.poster_path !== null" 
@@ -39,11 +38,11 @@
                             alt=""
                         >
                         <img class="no-img" v-else 
-                            src="https://www.altavod.com/assets/images/wposter-placeholder.png" 
+                            src=""
                             alt=""
                         >
                     </div>
-
+    
                     <!-- TITOLO -->
                     <div class="title">{{movie.title}}</div>
                     <div class="orig-title">{{movie.original_title}}</div>
@@ -55,7 +54,7 @@
                             <i v-for="n in 5 - getStar(movie.vote_average)" class="far fa-star"></i>
                         </span>
                     </div>
-
+    
                     <!-- LINGUA -->
                     <div class="language">
                         <span v-if="movie.original_language === 'it' || movie.original_language === 'en'">
@@ -65,6 +64,16 @@
                             Lingua originale: 
                             {{movie.original_language}}
                         </span>
+                    </div>
+
+                    <!-- STORY -->
+                    <div class="story">
+                        <p v-if="movie.overview.length > 0">
+                            {{movie.overview}}
+                        </p>
+                        <p v-else>
+                            Nessuna trama.
+                        </p>
                     </div>
                 </li>
             </ul>
@@ -79,7 +88,7 @@
                             alt=""
                         >
                         <img class="no-img" v-else 
-                            src="https://www.altavod.com/assets/images/poster-placeholder.png" 
+                            src=""
                             alt=""
                         >
                     </div>
@@ -105,6 +114,16 @@
                             Lingua originale: 
                             {{serie.original_language}}
                         </span>
+                    </div>
+
+                    <!-- STORY -->
+                    <div class="story">
+                        <p v-if="serie.overview.length > 0">
+                            {{serie.overview}}
+                        </p>
+                        <p v-else>
+                            Nessuna trama.
+                        </p>
                     </div>
                 </li>
             </ul>
