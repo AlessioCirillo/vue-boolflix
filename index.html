@@ -28,9 +28,18 @@
         </header>
 
         <main>
+            <ul >
+                <li class="genres" v-for="genre in genres">
+                    <a href="#">
+                        {{genre.name}}
+                    </a>
+                </li>
+            </ul>
+            
             <!-- MOVIES -->
             <ul>
-                <li v-for="movie in movies">         
+                <li class="movies" v-for="movie in movies"> 
+
                     <!-- POSTER -->
                     <div class="poster">
                         <img v-if="movie.poster_path !== null" 
@@ -77,7 +86,7 @@
     
             <!-- SEREIS -->
             <ul>
-                <li v-for="serie in series">
+                <li class="series" v-for="serie in series">
                     <!-- POSTER -->
                     <div class="poster">
                         <img v-if="serie.poster_path !== null" 

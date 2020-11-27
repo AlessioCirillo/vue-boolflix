@@ -21,6 +21,7 @@ header{
     left: 0;
     z-index: 1;
 }
+
 /* LOGO */
 .logo img{
     width: 85px;
@@ -38,14 +39,26 @@ main{
     padding: 100px 20px 0 20px;
 }
 
-ul{
+ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    color: #7f7f7f;
 }
 
-ul li{
+/* GENRES */
+.genres{
+    list-style: none;
+    margin: 20px 10px;
+}
+
+.genres a{
+    text-decoration: none;
+    color:#fff;
+}
+
+/* MOVIES AND SERIES */
+.movies,
+.series{
     position: relative;
     flex-basis: 265px;
     padding: 20px;
@@ -53,9 +66,46 @@ ul li{
     list-style: none;
     background: #2B3A47;
     text-align: center;
+    color: #7f7f7f;
     transition: .4s;
 }
 
+li div{
+    padding: 10px 0;
+}
+
+li .title{
+    text-transform: uppercase;
+    color: #fff;
+}
+
+li .fa-star{
+    color: #000;
+}
+
+.flag{
+    width: 40px; 
+}
+
+/* POSTER */
+.poster {
+    padding: 20px;
+}
+
+.poster img{
+    width: 185px;
+    height: 278px;
+}
+
+.poster .no-img{
+    width: 185px;
+    height: 278px;
+    background-image: url(../img/image-not-found.png);
+    background-position: center;
+    background-size: cover;
+}
+
+/* STORY */
 .story{
     display: flex;
     align-items: center;
@@ -76,6 +126,7 @@ ul li{
     font-size: 13px;
 }
 
+/* HOVER */
 ul li:hover{
     transform: scale(1.1);
 }
@@ -85,38 +136,4 @@ ul li:hover{
     opacity: 1;
     border-radius: 5px;
     color: #fff;
-}
-
-.poster {
-    padding: 20px;
-}
-
-.poster img{
-    width: 185px;
-    height: 278px;
-}
-
-.poster .no-img{
-    width: 185px;
-    height: 278px;
-    background-image: url(../img/image-not-found.png);
-    background-position: center;
-    background-size: cover;
-}
-
-li div{
-    padding: 10px 0;
-}
-
-li .title{
-    text-transform: uppercase;
-    color: #fff;
-}
-
-li .fa-star{
-    color: #000;
-}
-
-.flag{
-    width: 40px;
 }

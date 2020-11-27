@@ -5,13 +5,14 @@ const app = new Vue({
         movies:[],
         series:[],
         searchBar:'',
-        
+        genres:[]
     },
 
     methods:{
         search(){
             this.getMovies();
             this.getSeries();
+            this.getGenres();
         },
 
         getMovies(){
@@ -48,6 +49,23 @@ const app = new Vue({
             })
             .catch(error => {
                 // handle error
+                console.log(error);
+            })
+        },
+
+        getGenres(){
+            axios.get('https://api.themoviedb.org/3/genre/tv/list?',{
+                params:{
+                    api_key: 'cbadb2020a9a1deec5f8094ca2623fe0',
+                    query: this.searchBar,
+                    language: 'it-IT'
+                }
+            })
+            .then(result =>{
+                console.log(result);
+                this.genres = result.data.genres
+            })
+            .catch(error =>{
                 console.log(error);
             })
         },
