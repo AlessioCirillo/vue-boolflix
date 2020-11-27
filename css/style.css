@@ -87,6 +87,8 @@ ul li{
 }
 
 .poster .no-img{
+    width: 185px;
+    height: 278px;
     background-image: url(../img/image-not-found.png);
     background-position: center;
     background-size: cover;
